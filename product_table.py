@@ -13,18 +13,22 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(600, 310)
+        MainWindow.resize(598, 307)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.tableView = QtWidgets.QTableView(self.centralwidget)
-        self.tableView.setObjectName("tableView")
-        self.horizontalLayout.addWidget(self.tableView)
-        self.verticalScrollBar = QtWidgets.QScrollBar(self.centralwidget)
-        self.verticalScrollBar.setOrientation(QtCore.Qt.Vertical)
-        self.verticalScrollBar.setObjectName("verticalScrollBar")
-        self.horizontalLayout.addWidget(self.verticalScrollBar)
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
+        self.button1 = QtWidgets.QPushButton(self.centralwidget)
+        self.button1.setObjectName("button1")
+        self.gridLayout.addWidget(self.button1, 1, 1, 1, 1)
+        self.button2 = QtWidgets.QPushButton(self.centralwidget)
+        self.button2.setObjectName("button2")
+        self.gridLayout.addWidget(self.button2, 1, 2, 1, 1)
+        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        self.gridLayout.addWidget(self.tableWidget, 0, 1, 1, 2)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -33,3 +37,5 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.button1.setText(_translate("MainWindow", "Сохранить данные"))
+        self.button2.setText(_translate("MainWindow", "Очистить таблицу"))
