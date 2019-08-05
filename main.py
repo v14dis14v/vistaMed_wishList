@@ -4,7 +4,7 @@ import product_table
 import mysql.connector
 
 # подключение БД
-connect = mysql.connector.connect(user="root", password="Anastasiia!27", host="127.0.0.1", database="vista")
+connect = mysql.connector.connect(user="", password="", host="", database="")
 cursor = connect.cursor(buffered=True)
 
 add_value = ("INSERT INTO services VALUES (%(0)s, %(1)s, %(2)s, %(3)s)")
