@@ -4,8 +4,20 @@ import product_table
 import mysql.connector
 
 # подключение БД
-connect = mysql.connector.connect(user="******", password="*******", host="127.0.0.1", database="*****")
+connect = mysql.connector.connect(user="****", password="*****", host="127.0.0.1", database="*****")
 cursor = connect.cursor(buffered=True)
+
+# создание таблицы
+flag = True
+cursor.execute("SHOW TABLES")
+tables = cursor.fetchall()
+for iter in tables:
+    for j in iter:
+        if j == "services":
+            flag = False
+if flag:
+    cursor.execute("CREATE TABLE services (`name` varchar(90) NOT NULL, `price` varchar(50) NOT NULL,"
+                   "`link` varchar(250) NOT NULL, `other` varchar(600) DEFAULT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8;")
 
 add_value = ("INSERT INTO services VALUES (%(0)s, %(1)s, %(2)s, %(3)s)")
 
