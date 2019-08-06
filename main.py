@@ -4,7 +4,7 @@ import product_table
 import mysql.connector
 
 # подключение БД
-connect = mysql.connector.connect(user="", password="", host="", database="")
+connect = mysql.connector.connect(user="******", password="*******", host="127.0.0.1", database="*****")
 cursor = connect.cursor(buffered=True)
 
 add_value = ("INSERT INTO services VALUES (%(0)s, %(1)s, %(2)s, %(3)s)")
@@ -19,7 +19,7 @@ class ExampleApp(QtWidgets.QMainWindow, product_table.Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
-        # клдичество строк и столбцов
+        # количество строк и столбцов
         self.tableWidget.setColumnCount(4)
         self.tableWidget.setRowCount(50)
 
