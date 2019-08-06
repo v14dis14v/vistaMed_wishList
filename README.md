@@ -3,7 +3,7 @@
 
 Далее для корректного запуска необходимо в файле main.py вместо "*" вставить данные своей DB в 7 строке, а именно: 
 
-<code> user = "*", password = "*", database = "*" </code>
+<code> user = "**", password = "***", database = "*" </code>
 
 После чего данный проет необходимо собрать через <b>pyinstaller</b>.
 <h3>Установка pyinstaller через pip</h3>
